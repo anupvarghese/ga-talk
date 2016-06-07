@@ -1,0 +1,17 @@
+*, html, body {
+  box-sizing:  border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html, body {
+  background: #252A34;
+  min-height: 100%;
+}
+
+.logo {
+  position: fixed;
+  width: 651px;
+  height: 428px;
+  bottom: 15px;
+  left: 15px;
+}

@@ -1,0 +1,43 @@
+.shout {
+  display: flex;
+  margin-bottom: 25px;
+  padding: 25px 20px;
+  border: 2px solid #08D9D6;
+}
+
+.username {
+  color: #08D9D6;
+  padding-bottom: 5px;
+}
+
+.shoutBody {
+  flex-grow: 1;
+}
+
+.shoutText {
+  color: #EAEAEA;
+  font-size: 1.5em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 470px;
+}
+
+.shoutActions {
+  color: #EAEAEA;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+
+.shoutActions span:hover {
+  cursor: pointer;
+  color: #FF2E63;
+}
+
+.shoutHeart {
+  margin-right: 15px;
+}
+
+.shoutHeartSelected {
+  color: #FF2E63;
+}

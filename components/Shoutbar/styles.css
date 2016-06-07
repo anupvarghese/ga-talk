@@ -1,0 +1,36 @@
+
+.shoutBar {
+  height: 100px;
+  background: #252A34;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.shoutInput {
+  width: 100%;
+  border: none;
+  background: none;
+  color: #fff;
+  border-bottom: 3px solid #FF2E63;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.shoutInput:focus {
+  outline: none;
+}
+
+.shoutButton {
+  padding: 10px;
+  margin-left: 15px;
+  cursor: pointer;
+  color: #fff;
+  font-weight: 700;
+  border: 3px solid #08D9D6;
+  background: none;
+}
+
+.shoutButton:hover {
+  background: #08D9D6;
+}
