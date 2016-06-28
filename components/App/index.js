@@ -3,71 +3,30 @@ import styles from './styles.css';
 import Shoutbar from '../Shoutbar';
 import Shout from '../Shout';
 import ProfilePicture from '../ProfilePicture';
+import { connect } from 'react-redux';
 
-export default class App extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      shouts: [
-        {
-          user: {
-            name: 'Phil',
-            profilePicture: 'http://www.fillmurray.com/100/100'
-          },
-          isHearted: false,
-          text: 'TODAY IS TOMORROW. IT HAPPENED!!!',
-        },
-        {
-          user: {
-            name: 'Phil',
-            profilePicture: 'http://www.fillmurray.com/100/100'
-          },
-          isHearted: false,
-          text: 'WELL, WHAT IF THERE IS NO TOMORROW?!!!',
-        },
-      ]
-    }
-  }
-
-  addShout(text) {
-    const { shouts } = this.state;
-
-    this.setState({
-      shouts: [...shouts, {
-        user: {
-          name: 'Phil',
-          profilePicture: 'http://www.fillmurray.com/100/100'
-        },
-        isHearted: false,
-        text
-      }]
-    });
-  }
-
-  heartShout(i) {
-    const { shouts } = this.state;
-
-    this.setState({
-      shouts: shouts.reduce((newShouts, shout, j) => [
-        ...newShouts,
-        {
-          ...shout,
-          isHearted: i === j ? !shout.isHearted : shout.isHearted
-        }
-      ], [])
-    });
   }
 
   render() {
-    const { shouts } = this.state;
+    const { shouts } = this.props;
     return <div className={styles.app}>
       <ProfilePicture imageUrl='http://www.fillmurray.com/100/100' />
       <div className={styles.feed}>
-        <Shoutbar newShout={shout => this.addShout(shout)}/>
+        <Shoutbar />
         { shouts.map((shout, i) => (
-          <Shout key={i} {...shout} heartShout={() => this.heartShout(i)} />
+          <Shout key={i} {...shout}  />
         )) }
       </div>
     </div>
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    shouts: state.shouts
+  }
+}
+export default connect(mapStateToProps)(App)
